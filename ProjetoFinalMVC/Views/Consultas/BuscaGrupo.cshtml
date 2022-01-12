@@ -3,14 +3,11 @@
    @{
 
     ViewData["Title"] = "Busca Agrupada";
-    DateTime minDate = DateTime.Parse(ViewData["minDate"] as string);
-    DateTime maxDate = DateTime.Parse(ViewData["maxDate"] as string);
-
 }
 
 <h1>@ViewData["Title"]</h1>
 
- <img src=https://localhost:44353/Images/consulta.png align="right" style="width:120px;height:120px;">
+<img src=https://localhost:44353/Images/consulta.png align="right" style="width:120px;height:120px;">
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -64,11 +61,11 @@
                             <td class="col-lg-2">
                                 @Html.DisplayFor(modelItem => item.Doutor.Nome)
                             </td>
-                             <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                            <a asp-action="Details" asp-route-id="@item.Id">Visualizar</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-                        </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id">Visualizar</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                            </td>
                         </tr>
                     }
                 </tbody>

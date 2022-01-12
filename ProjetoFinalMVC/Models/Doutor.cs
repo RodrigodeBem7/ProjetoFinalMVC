@@ -11,13 +11,13 @@ namespace ProjetoFinalMVC.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(60,MinimumLength =3)]
+        [StringLength(60, MinimumLength = 3)]
         public string Nome { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        
+
         [Required]
         [DataType(DataType.PhoneNumber)]
         public string Telefone { get; set; }
@@ -36,14 +36,7 @@ namespace ProjetoFinalMVC.Models
             Telefone = telefone;
             Especializacao = especializacao;
         }
-        public void AddConsulta(Consulta consulta)
-        {
-            Consultas.Add(consulta);
-        }
-        public void RemoverConsulta(Consulta consulta)
-        {
-            Consultas.Remove(consulta);
-        }
+
         public int TotalDeConsultas(DateTime dataInicial, DateTime dataFinal)// Método que retorna o total de consultas realizadas pelo Dr. num determinado período
         {
             int contaConsulta = 0;

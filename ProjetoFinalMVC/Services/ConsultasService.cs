@@ -15,7 +15,7 @@ namespace ProjetoFinalMVC.Services
         {
             _contexto = contexto;
         }
-        public async Task<List<Consulta>> EncontrarDataAsync(DateTime? minDate, DateTime? maxDate)
+        public async Task<List<Consulta>> EncontrarDataAsync(DateTime? minDate, DateTime? maxDate)// método para realizar a busca genérica das consultas
         {
             var resultado = from obj in _contexto.Consulta select obj;
             if (minDate.HasValue)
@@ -71,22 +71,21 @@ namespace ProjetoFinalMVC.Services
                 Console.WriteLine(e.Message);
             }
         }
-
-        public async Task<Dictionary<Especializacao, List<Consulta>>> EncontrarGrupoAsync(DateTime? minDate, DateTime? maxDate)
+        public async Task<Dictionary<Especializacao, List<Consulta>>> EncontrarGrupoAsync(DateTime? minDate, DateTime? maxDate) // método para agrupar as consultas por especializações
         {
 
             var consultas = await EncontrarDataAsync(minDate, maxDate);
             var especializacoes = await _contexto.Especializacao.ToListAsync();
 
-            var grouping = new Dictionary<Especializacao, List<Consulta>>();
+            var grupo = new Dictionary<Especializacao, List<Consulta>>();
 
             especializacoes.ForEach(e =>
             {
                 var consulta = consultas.Where(c => c.Doutor.Especializacao == e).ToList();
-                grouping.Add(e, consulta);
+                grupo.Add(e, consulta);
             });
 
-            return grouping;
+            return grupo;
         }
     }
 }

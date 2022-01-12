@@ -21,14 +21,14 @@ namespace ProjetoFinalMVC.Models
             Id = id;
             Nome = nome;
         }
-        public void AddDoutor(Doutor doutor)
-        {
-            Doutores.Add(doutor);
-        }
+        //public void AddDoutor(Doutor doutor)
+        //{
+        //    Doutores.Add(doutor);
+        //}
 
-        public int TotalDeConsultas(DateTime dataInicial, DateTime dataFinal)// Método que retorna o total de consultas realizadas por uma especialização num determinado período
-        {
-            return Doutores.Sum(doutor => doutor.TotalDeConsultas(dataInicial, dataFinal));// Realiza a soma total das consultas dos drs. de uma determinada especialização
-        }
+        //public int TotalDeConsultas(DateTime dataInicial, DateTime dataFinal)// Método que retorna o total de consultas realizadas por uma especialização num determinado período
+        //{
+        //    return Doutores.Sum(doutor => doutor.TotalDeConsultas(dataInicial, dataFinal));// Realiza a soma total das consultas dos drs. de uma determinada especialização
+        //}
     }
 }
