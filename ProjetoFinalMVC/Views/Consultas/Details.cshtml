@@ -1,0 +1,36 @@
+﻿@model ProjetoFinalMVC.Models.Consulta
+
+@{
+    ViewData["Title"] = "Informações";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Doutor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doutor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doutor.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Editar</a>
+    <a asp-action="Index">Voltar para os cadastros</a>
+</div>
